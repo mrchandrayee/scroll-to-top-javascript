@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d1c26">
+  <title>Scroll to Top Using JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Scroll Demo</a>
+    <span>JavaScript UI interaction</span>
+  </header>
+
+  <main id="top" class="page-content">
+    <section class="hero">
+      <p class="eyebrow">SMALL DETAIL · BETTER EXPERIENCE</p>
+      <h1>Scroll to Top Button</h1>
+      <p>Scroll down the page. A red button will appear in the bottom-right corner. Click it to smoothly return to the top.</p>
+      <a class="scroll-cue" href="#article">Explore the page <span>↓</span></a>
+    </section>
+
+    <article id="article" class="article">
+      <h2>Scroll Down The Page</h2>
+      <p class="lead">A simple back-to-top control helps visitors navigate long pages without manually scrolling all the way back.</p>
+      <div class="article-grid">
+        <section>
+          <h3>Why use a back-to-top button?</h3>
+          <p>Long-form pages, documentation, product catalogs and editorial websites can require a lot of scrolling. A small fixed control gives visitors a quick way to return to the beginning.</p>
+          <p>The button stays out of the way near the bottom-right edge. It becomes visible after the visitor scrolls down and fades away again near the top.</p>
+          <p>JavaScript listens for the page scroll event and checks the current vertical scroll position. When the position passes the chosen threshold, a visible class is added to the button.</p>
+        </section>
+        <aside class="note">
+          <strong>Quick tip</strong>
+          <p>Try scrolling with your mouse wheel, trackpad, keyboard, or the scrollbar. The button responds to all normal page scrolling.</p>
+        </aside>
+      </div>
+      <h3>How it works</h3>
+      <p>The button is fixed to the viewport using CSS. Its opacity and visibility are transitioned so that it can fade smoothly in and out. The click handler uses the browser's smooth scrolling API to return to the top.</p>
+      <p>The original tutorial also demonstrates the cross-browser scroll position reset: <code>document.body.scrollTop = 0</code> for Safari and <code>document.documentElement.scrollTop = 0</code> for Chrome, Firefox and Opera.</p>
+      <h3>Keep exploring</h3>
+      <p>This sample article intentionally includes enough content to demonstrate the interaction. Resize the browser to see the layout adapt to smaller screens. The fixed button remains accessible and stays in the same viewport position.</p>
+      <p>Good interface details should be easy to discover, work reliably, and avoid distracting from the content. A compact back-to-top button is a useful example of that principle.</p>
+      <div class="end-mark">— End of sample article —</div>
+    </article>
+  </main>
+
+  <footer>Demo page · Scroll down to reveal the back-to-top button</footer>
+
+  <button id="button" type="button" aria-label="Scroll to top" title="Go to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+  </button>
+  <script src="script.js"></script>
+</body>
+</html>
